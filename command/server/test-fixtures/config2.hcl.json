@@ -24,6 +24,7 @@
   "telemetry":{
     "statsd_address":"bar",
     "statsite_address":"foo",
+    "prometheus_address":"baz",
     "disable_hostname":true
   }
 }

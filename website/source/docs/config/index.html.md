@@ -118,6 +118,9 @@ is within the object itself.
 * `statsd_address` (optional) - This is the same as `statsite_address` but
   for StatsD.
 
+* `prometheus_address` (optional) - This is the endpoint exposed via HTTP for scraping by
+  [Prometheus](https://github.com/prometheus/prometheus)
+
 * `disable_hostname` (optional) - Whether or not to prepend runtime telemetry
   with the machines hostname. This is a global option. Defaults to false.
 
@@ -277,7 +280,7 @@ The following optional settings can be used to configure zNode ACLs:
 If neither of these is set, the backend will not authenticate with Zookeeper
 and will set the OPEN_ACL_UNSAFE ACL on all nodes. In this scenario, anyone
 connected to Zookeeper could change Vault’s znodes and, potentially, take Vault
-out of service. 
+out of service.
 
 Some sample configurations:
 

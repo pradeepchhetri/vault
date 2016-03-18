@@ -541,6 +541,15 @@ func (c *ServerCommand) setupTelemetry(config *server.Config) error {
 		fanout = append(fanout, sink)
 	}
 
+	// Configure the prometheus sink
+	if telConfig.PrometheusAddr != "" {
+		sink, err := metrics.NewPrometheusSink(telConfig.PrometheusAddr)
+		if err != nil {
+			return err
+		}
+		fanout = append(fanout, sink)
+	}
+
 	// Initialize the global sink
 	if len(fanout) > 0 {
 		fanout = append(fanout, inm)

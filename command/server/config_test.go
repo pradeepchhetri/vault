@@ -84,6 +84,7 @@ func TestLoadConfigFile_json(t *testing.T) {
 		Telemetry: &Telemetry{
 			StatsiteAddr:    "baz",
 			StatsdAddr:      "",
+			PrometheusAddr:  "foo",
 			DisableHostname: false,
 		},
 
@@ -136,6 +137,7 @@ func TestLoadConfigFile_json2(t *testing.T) {
 		Telemetry: &Telemetry{
 			StatsiteAddr:    "foo",
 			StatsdAddr:      "bar",
+			PrometheusAddr:  "baz",
 			DisableHostname: true,
 		},
 	}
@@ -173,6 +175,7 @@ func TestLoadConfigDir(t *testing.T) {
 		Telemetry: &Telemetry{
 			StatsiteAddr:    "qux",
 			StatsdAddr:      "baz",
+			PrometheusAddr:  "foo",
 			DisableHostname: true,
 		},
 
